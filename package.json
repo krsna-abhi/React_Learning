@@ -1,0 +1,24 @@
+{
+  "name": "krsna_react",
+  "version": "1.0.0",
+  "description": "this is my react project for test & learning",
+  "keywords": [],
+  "homepage": "https://github.com/krsna-abhi/React_Learning#readme",
+  "bugs": {
+    "url": "https://github.com/krsna-abhi/React_Learning/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://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@github.com/krsna-abhi/React_Learning.git"
+  },
+  "license": "ISC",
+  "author": "krsna",
+  "type": "commonjs",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {
+    "parcel": "^2.16.4"
+  }
+}

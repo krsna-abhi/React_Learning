@@ -1,1 +1,68 @@
 abcd
+
+yes react makes our application faster, but react alone doesn't make our appication faster
+together with differet tools and libraries our aap is faster
+
+1. npm ?
+    - link > https://www.npmjs.com/
+    - npm manage packages
+    - npm is a repository, where all packages are stored or hosted
+    
+    - how to use npm ? run command $ npm init
+    it will create a package.json file within your project
+    - why do we need package.json ?
+        - imagine you're building a js project, and 
+        your applicaiton proper functioning is dependent upon many packages or dependencies
+        - so, instead of remembering all these packages, npm records them inside package.json
+        under key "dependencies"
+        - let say you need you project to work on a new machine
+            - so then you cna simply run command $ npm install
+            and npm will install all dependencies automatically.
+    
+    - our project is dependent upon many packages, 
+    so all those packages on which our project is dependent are called dependencies, 
+    and npm will manage all these dependencies for us
+    - we just have to install those packages or dependencies, and use them
+
+    most important package in our application is > bundler
+
+how to install a package ?
+    $ npm install <package-name>
+    - after installation > package.json file "dependencies" key is updated
+    example :
+        $ npm install parcel
+        "dependencies": {
+            "parcel": "^2.16.4"
+        }
+    how it works ?
+        - when $ npm install <package-name> is executed, it fetched / downloads 
+        the <package-name> from npm repository in our project and 
+        updates the package.json file "dependencies" key
+
+
+2. what is a bundler ?
+    - a bundler is a tool that collects all the files your web application needs, 
+    processes them, and combines them into a small number of optimized files that 
+    browser can efficiently load.
+
+what does the bundler do ?
+    - a bundler analyzes your project and builds a dependency graph.
+    - a dependency graph is simply a map showing which files depend on which other files.
+    - then a bundler > bundles all the fine into one seperate files
+    instead of shipping 300 files, now the browser loads only a few optimized files.
+
+what jobs does a bundler perform ?
+    - combine files
+    - resolve imports
+    - minify code
+    - remove unused code ( tree shaking )
+    - optimize images
+    - instead of loading many CSS files, a bundler combines them into one optimized css file.
+
+examples of bundler > parcel, webpack, vite, etc.
+
+3. dev-dependency & dependency ?
+    - bundlers are dev-dependencies
+
+
+4. package.json & package-lock.json
