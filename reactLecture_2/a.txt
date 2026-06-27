@@ -89,10 +89,13 @@ what jobs does a bundler performs for us ?
     add this line in .gitignore file > node_modules/
 
 
-
-$ npx parcel reactLecture_2/index.html
 what is npx ?
-to execute any package, then we use npx
+    - to execute any package, then we use npx
+
+    - for dev build, run command $ npx parcel reactLecture_2/index.html
+        - build is stored in dist folder
+    - for prof build, run command $ npx parcel build reactLecture_2/index.html
+        - build is stored in dist folder
 
 
 - we will never use these cdn links to bring react and react-dom into our project 
