@@ -64,7 +64,11 @@ what jobs does a bundler performs for us ?
     - they host your application to the local server, on some project
     - auto refreshing you browser page > which is known as HMR ( hot module replacement )
         - this is happening becuase parcel is using file watching algorithm ( written in c++ )
-    - parcel is caching, see folder > .parcel-cache
+    - reliable caching, see folder > .parcel-cache
+    - consistent hashing
+    - code splitting
+    - differential bundeling > to support older browsers and different browsers
+    - https support
 
 3. dev-dependency & dependency ?
     - bundlers are dev-dependencies
