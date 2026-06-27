@@ -66,3 +66,16 @@ examples of bundler > parcel, webpack, vite, etc.
 
 
 4. package.json & package-lock.json
+
+
+
+5. node_modelues folder ?
+    - node_modules is collection of dependencies & transitive-dependencies
+    - it contains all the files that npm command $ npm install <package-name> has fetched or 
+    downloaded from npm repository, related to <package-name>
+    - when you run $ npm install , all the "dependencies" or packages are downloaded and 
+    stored within their seperate folders within node_modelues
+
+    - ❌ never commit & push node_modelues
+    add this line in .gitignore file > node_modules/
+
