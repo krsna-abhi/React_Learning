@@ -1,2 +1,5 @@
 # Dependencies
 node_modules/
+
+# to ignore temporary files
+~$*
