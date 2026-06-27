@@ -79,3 +79,67 @@ examples of bundler > parcel, webpack, vite, etc.
     - ❌ never commit & push node_modelues
     add this line in .gitignore file > node_modules/
 
+
+
+$ npx parcel reactLecture_2/index.html
+what is npx ?
+to execute any package, then we use npx
+
+
+- we will never use these cdn links to bring react and react-dom into our project 
+
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+
+        - because cdn do time taking network calls to https://unpkg.com
+        - if react version changes we have to maually update these cdn links
+
+- solution : we will download react and react-dom from npm repository
+    package.json >
+        "dependencies": {
+            "parcel": "^2.16.4"
+            }
+    $ npm install react
+    $ npm install react-dom
+    - now package.json "dependencies" key will be updated, and 
+    - react & react-dom package and their transitive-dependencies will be downloaded 
+    into node_modelues folder
+    package.json >
+        "dependencies": {
+            "parcel": "^2.16.4",
+            "react": "^19.2.7",
+            "react-dom": "^19.2.7"
+        }
+    
+    after that
+    - remove cdn links from your index.html file
+
+- now you will see new problem > that your applications isn't working
+- solution : we have to import react and react-dom into our project
+    - open App.js file, where you have written your react code, and 
+    - import react and react-dom :
+        import React from "react"; // this "react" refer to the react within out node_modelues
+        import ReactDOM from "react-dom/client"; // same for "react-dom"
+
+- now you will see new problem > @parcel/transformer-js: Browser scripts cannot have imports or exports.
+    - meaning > error means you're using ES module syntax (import/export) in a file 
+    that Parcel is treating as a plain browser js script ( the old-school <script> tag kind ).
+- solution :
+    - there are two way we can run js on browser
+    - first : classic old way > <script src="App.js"></script>
+        Runs in global scope
+        Cannot use import / export
+    - second : ES Module modern way > <script type="module" src="App.js"></script>
+        Runs in module scope
+        Can use import / export
+        Variables are isolated per file
+- in our case Parcel sees your file has import/export statements, but your <script> tag 
+is missing type="module" — so it throws this error because the two are incompatible.
+
+

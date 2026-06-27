@@ -1,3 +1,6 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
+
 // here we are creating a h1 element in React using its React.createElement method
 const titleElement = React.createElement("h1", null, "react to mast hai");
 // but this titleElement aka our React element is not yet rendered on the web page,

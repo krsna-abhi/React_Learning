@@ -1,5 +1,12 @@
 # Dependencies
+# node_modules > installed packages, can be restored via command $ npm install
 node_modules/
+
+# Parcel build outputs
+# .parcel-cache > parcel's internal cache, auto-regenerated on every build
+.parcel-cache
+# dist > built output files, generated from your source code
+dist
 
 # to ignore temporary files
 ~$*
