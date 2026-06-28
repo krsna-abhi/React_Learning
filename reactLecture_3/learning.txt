@@ -112,4 +112,5 @@ html way, so no react.createElement()
 
 
 --------------------------------------- x ---------------------------------------
-
+react element using jsx >
+- react element should have attributes in camleCase, like className
