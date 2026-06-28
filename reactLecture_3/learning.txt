@@ -25,6 +25,8 @@ in development phase -
     # dist/ folder is created in both development & production phase — 
     difference is just how optimized the files inside it are.
 
+                            ----- x -----
+
     - but it is very tedious to write long commands for build in 
         - development $ npx parcel index.html
         - production $ npx parcel build index.html
@@ -37,11 +39,34 @@ in development phase -
 
     # if you got into knew project, and you don't knwo to how to start the project
     then open package.json file > look for "script" key
-    and run command $ npm run <the nam eproject has give for dev / production build>
+    and run command $ npm run <the nam eproject has give for dev / prod build>
     - in our case :
         - development $ npm run dev -or- $ npm dev
         - production $ npm run prod
 
 
+--------------------------------------- x ---------------------------------------
+- react element != html element
+- react element is a js object --> when we render that object, it turns into dom 
+element or html element
+
+- JSX --> Babel converts / compiles JSX to --> react.creatElement() function calls
+    example : <h1 className="title">Hello</h1> --> React.createElement('h1', { className: 'title' }, 'Hello')
+- react.creatElement() function calls --> returns --> a plain js objects
+    example : React.createElement('h1', { className: 'title' }, 'Hello') --> { type: 'h1', props: { className: 'title', children: 'Hello' }, key: null }
+    # nothing is rendered yet : this js object just describes what you want to see, it's only in memory.
+- js object --> is passed to reactDOM.createRoot(root).render() and --> then react 
+calls browser APIs to create actual DOM elements --> dom is updated --> html element appears on the 
+browser
+    - const root = document.getElementById("root");
+    - const path = reactDom.createRoot(root);
+    example : reactDOM --> <h1 class="title">Hello</h1>
+
+- react acts as the translator, which reads those js objects and calculates 
+the minimal number of real DOM operations needed to match them frontend developed 
+in react.
+
+
+--------------------------------------- x ---------------------------------------
 
 
