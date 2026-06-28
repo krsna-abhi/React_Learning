@@ -104,7 +104,6 @@ html way, so no react.createElement()
 - js engine can only understand js or ECMA-Script
     - try running jsx on browser consol
 
-
 ⭐ important :
     - React is a library, not a part of js of jsx.
     - js is a programming language, jsx is extension of js and 
