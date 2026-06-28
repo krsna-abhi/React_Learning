@@ -1,4 +1,4 @@
-18 jun 2026
+28 jun 2026
 
 --------------------------------------- x ---------------------------------------
 in development phase -
@@ -37,8 +37,8 @@ in development phase -
             "prod": "parcel build index.html"
         },
 
-    # if you got into knew project, and you don't knwo to how to start the project
-    then open package.json file > look for "script" key
+    # if you got into knew project, and you don't knwo to how to start the 
+    project then open package.json file > look for "script" key
     and run command $ npm run <the nam eproject has give for dev / prod build>
     - in our case :
         - development $ npm run dev -or- $ npm dev
@@ -66,7 +66,51 @@ browser
 the minimal number of real DOM operations needed to match them frontend developed 
 in react.
 
+- react element is a object which is created by react.createElement() function.
+it is used to create a virtual DOM element in React.
+- it returns a js object, which represents the virtual DOM element and this 
+virtual DOM element can be rendered into actual DOM using ReactDOM package.
+
 
 --------------------------------------- x ---------------------------------------
+jsx >
+- jsx was created by facebook,
+- why ? :
+    jsx was create bacause react.createElement() function calls are very hard to 
+    read and not developer friendly
+- so jsx was created for react
 
+- jsx is just a variation of javascript, which helps us creating react elements 
+html way, so no react.createElement()
+    - in background Babel converts jsx -to- react.createElement()
+    so it easy for us to write conde in jsx, and Babel will handel translation.
+
+- jsx is just an extension of js, in terms of syntax we use within jsx
+- which means new visual structure added on top of js,
+
+⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐
+    - jsx code --> parcel ( bundler ) calls Babel --> Babel transplies jsx --
+    --> plain vanila js with react.createElement() function call --
+    --> Parcel bundles your plain js code together with the React library + 
+    other libraries into --> one bundle.js file ( which you can see in dist 
+    folder ) --> browser js engine run this bundle.js --> React builds a 
+    virtual DOM tree, then writes into real browser DOM
+⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐
+
+⭐ important :
+    - React.createElement() is just a regular JavaScript function
+    - defined inside the React library itself.
+
+- js engine can only understand js or ECMA-Script
+    - try running jsx on browser consol
+
+
+⭐ important :
+    - React is a library, not a part of js of jsx.
+    - js is a programming language, jsx is extension of js and 
+    React is a tool written using js
+    - jsx is not html or html in react
+
+
+--------------------------------------- x ---------------------------------------
 
