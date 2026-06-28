@@ -114,3 +114,30 @@ html way, so no react.createElement()
 --------------------------------------- x ---------------------------------------
 react element using jsx >
 - react element should have attributes in camleCase, like className
+
+< jsx >
+    <div>Hello</div>
+< js >
+    React.createElement('div', // type
+        null, // props (none)
+        'Hello' // child
+    )
+
+< jsx >
+    <button className="btn" onClick={handleClick}>click me</button>
+< js >
+    React.createElement('button',
+        { className: 'btn', onClick: handleClick },
+        'Click me'
+    )
+
+< JSX >
+    <input type="text" placeholder="Name" />
+< JS >
+    React.createElement('input',
+        { type: 'text', placeholder: 'Name' },
+        // no children — self-closing
+    )
+
+
+
