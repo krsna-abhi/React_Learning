@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root">mera react app</div>
+    <!-- react cdn links -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <!-- react file -->
+    <script src="App_3.js"></script>
+  </body>
+</html>
+
+<!-- 
+use crossorigin attribute when loading scripts from external CDNs or different domains. 
+ for local/same-origin scripts, you can skip it because in our case App_3.js is same-origin - 
+ since App_3.js is in the same folder as your HTML file, and the browser loads it from the same origin.
+ -->

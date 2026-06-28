@@ -1,0 +1,227 @@
+24 jun 2026
+
+------------------------------------------ x ------------------------------------------
+what is CND ( content delivery network ) ?
+    - CDN is a global network of servers, where a website files are stored on 
+    multiple nodes or servers within that network, why ? so whenever a user 
+    sends a request for any of the files, it can be delivered from the nearest 
+    node from the user
+how this is done ?
+    - first : all the files & dara is on the main server
+    - second : when you go for any CDN service provider, they copy the original 
+    files & data onto different server within CDN global network, and this 
+    process is known as caching
+    - third : user requests for a file
+    - fourth : CDN analyse which server is nearer to the user
+    - fifth : thenthat file is delivered to user from that nearest edge 
+    CDN server
+    - advantages of it : low latency, fast loading, reliable connection, low 
+    pressure on main server, good up time, good protection against DDOS attacks
+enterprise and cloud-native providers worldwide ?
+    Cloudflare, Akamai, Amazon CloudFront, Google Cloud CDN, and Fastly
+    - best CDN for you application depends on your specific infrastructure, 
+    user traffic location, and security needs.
+
+    - in simple > a CDN is a globaly distributed group of servers that speeds 
+    up the delivery of web content by caching it to the server closest to users.
+    - CDN allows for the quick transfer of assets needed for loading internet 
+    content like - HTML pages, js files, stylesheets, images, and videos.
+
+what are CDN links ?
+    - a CDN link is a web address used to load website files like - images, 
+    videos, or code libraries from a Content Delivery Network 
+    instead of your main server.
+    - CDN links speed up websites by serving files from servers 
+    geographically closest to the user.
+
+reference : https://legacy.reactjs.org/docs/cdn-links.html
+react & react-dom CDN link : add this into your main html file
+    <script 
+        crossorigin 
+        src="https://unpkg.com/react@18/umd/react.development.js">
+    </script>
+    <script 
+        crossorigin 
+        src="https://unpkg.com/react-dom@18/umd/react-dom.development.js">
+    </script>
+
+
+------------------------------------------ x ------------------------------------------
+what is crossorigin attribute ?
+    - crossorigin attribute tells the browser to fetch src file from 
+    another website or server, but do it openly, then send where the request 
+    is coming from, so the other server can respond with proper permissions.
+    - Adding crossorigin tells the browser : 
+    "This is a public CORS request." 
+        The CDN responds with the proper headers, and 
+        browser shows the full error details.
+    - Without crossorigin attribute, 
+    browser fetches the src file silently with no origin or source info, and
+    if any error occurs, browser hides error details as a safety measure.
+
+    - crossorigin ek simple sa attribute hai jo browser ko batata hai :
+    "Yaar, ye file kisi doosri website se aa rahi hai - lekin tension mat le, 
+    openly maango usse!"
+    - Bina crossorigin ke :
+        - Browser file toh le ata hai, lekin chup chaap - koi identity 
+        nahi batata. toh agar React mein koi error aaye, browser bolega :
+        "Script error." — bas itna hi, kuch aur nahi batayega.
+    - crossorigin ke saath :
+        - Browser openly boleta hai CDN ko - "Main yoursite.com ek source 
+        se aa raha hoon, mujhe ye file do" CDN permission deta hai, aur 
+        ab agar React mein error aaye toh poori detail milti hai - 
+        kaunsi file, kaunsi line, kya problem hui.
+
+can we use crossorigin attribute with our normal script tag ?
+    - always use crossorigin attribute when loading scripts from external CDNs 
+    or different domains.
+    - for local or same-origin scripts, you can skip it
+        - in our case <script src="App_3.js"> </script> is same-origin, so 
+        browser loads it from the same origin.
+
+
+------------------------------------------ x ------------------------------------------
+- react is a js library - developed by facebook 
+    - for building UIs or single page applications
+- browser don't understand react, so react code is convereted into js code
+
+why we have react and react-dom ?
+    - React : the core react library where you write components, state, and UI logic. 
+        It builds a virtual representation of the UI (virtual DOM) in memory.
+    - ReactDOM : the browser-specific renderer that takes React's virtual DOM and 
+        updates the real browser DOM (mounts, updates, and unmounts components).
+        # simple way: React creates the UI structure and behavior; ReactDOM puts 
+        that UI onto the actual web page.
+
+simple :
+    react core --> react-dom --> browser
+more detailed :
+    React App --> React-DOM Bridge --> Virtual Element --> Actual DOM Node --> 
+    web page ( root element within the html page )
+
+code >
+    - here we are creating a h1 element in React using its React.createElement method
+const titleElement = React.createElement("h1", null, "react to mast hai");
+    - but this titleElement aka our React element is not yet rendered on the web page,
+
+    - we need to use ReactDOM methods to render it on the web page
+    - first : we will get the root element from the html page
+const rootElement = document.getElementById("root");
+    - second : we will use ReactDOM.createRoot() method to create a root \ 
+    connection \ portal \ path for our React element to be rendered within the 
+    <div id="root">root</div>
+const path = ReactDOM.createRoot(rootElement); // here we are creating a path from 
+    our React app to the root element within the html page
+    - third : we will use .render() method on our path variable to render our React 
+    element titleElement within the root element of the html page 
+path.render(titleElement);
+
+
+------------------------------------------ x ------------------------------------------
+React.createElement() takes 3 types of arguments :
+    - first : element type, like > "div", "h1", MyComponent
+    - second : props object, like > { id: "root", className: "box" }
+    - third : childrens, like > strings, numbers, or more createElement() calls
+
+    - React.createElement() is just a regular JavaScript function
+    - defined inside the React library itself.
+
+    - react element is just a js object, 
+    - react ReactDOM.render() method turning that js object into an actual DOM node 
+    and then rendering it within #root node of the html page.
+    - react-DOM is a bridge between React and the actual DOM node of the web page.
+    - react-DOM is responsible for rendering React elements into actual DOM nodes or 
+    within #root node of the web page.
+
+    - react element is a object which is created by react.createElement() function.
+    - react.createElement() is used to create a react element, which is virtual DOM 
+    element in React.
+    - this virtual DOM element can be rendered into actual DOM using ReactDOM package.
+
+
+------------------------------------------ x ------------------------------------------
+task > we will try to mimic the above HTML elements structure -into- React :
+    <div id="root">
+    <div id="name">
+        <div id="fname">first name</div> : krishna
+        <div id="lname">last name</div> : rays
+    </div>
+    <div id="info">
+        <div id="age">age</div> : 25
+    </div>
+    </div>
+
+solution >
+    - paths & connections
+const root = document.getElementById("root");
+const path = ReactDOM.createRoot(root);
+
+    - my react element
+const myReactElement = React.createElement(
+  "div",
+  { id: "root" },
+  React.createElement(
+    "div",
+    { id: "name" },
+    React.createElement("div", { id: "fname" }, "first name"),
+    " : krishna",
+    React.createElement("div", { id: "lname" }, "last name"),
+    " : rays",
+  ),
+  React.createElement(
+    "div",
+    { id: "info" },
+    React.createElement("div", { id: "age" }, "age"),
+    " : 25",
+  ),
+);
+
+path.render(myReactElement);
+    - React will clear that existing content of the 
+    <div id="root"> ..... /div> and 
+    replace it with the UI produced by your React component tree
+
+
+------------------------------------------ x ------------------------------------------
+# interview question > 
+    why react replace childrens of <div id="root"> </div> ?
+Answer >
+    - if React did not replace or take control of the contents of #root, then there 
+    would be confusion like :
+        - which DOM nodes were created by React ?
+        - which ones were manually written in HTML ?
+        - which ones should React update ?
+        - which ones should it leave alone ?
+    React Doc says > 
+        - React takes over managing the DOM inside the #root node, and on the first 
+        render it clears the existing HTML inside that root.
+    
+    - React keeps the container element <div id="root"> </div> and React replaces every 
+    children inside #root node
+    - On the first render, React clears the root’s existing content or childrens and 
+    mounts its own UI there.
+    - for later updates, React dosn't destroy everything blindly on every update.
+        - React keeps track of the changes in the virtual DOM and only updates the 
+        parts of the DOM that have changed, which is more efficient than re-rendering 
+        the entire UI.
+        - in simple way, React uses a 'diffing algorithm' or 'reconciliation process'
+        - in diffing algorithm - React-DOM compares old virtual tree vs new virtual 
+        tree to figure out : 
+            - what changed, what can stay
+            - what should be updated, what should be removed
+
+
+------------------------------------------ x ------------------------------------------
+async & defer
+link > https://discourse.mozilla.org/t/javscript-async-and-defer/107072
+    - both async and defer download .js file or script in parallel to HTML parsing 
+    ( non-blocking the thread ), but the difference is the time when the code runs :
+        - async runs as soon as possible and blocks the HTML parsing.
+        - defer runs after the the HTML parsing is finished.
+when to use which one ?
+    - when we have multiple async scripts we don’t know which runs first. This means 
+    we should only use async when the scripts don’t depend on each other.
+    - defer scripts always run in the same order as they appear in the HTML file.
+
+
+------------------------------------------ x ------------------------------------------

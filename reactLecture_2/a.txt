@@ -1,8 +1,16 @@
-abcd
+26 jun 2026 - 27 jun 2026
 
-yes react makes our application faster, but react alone doesn't make our appication faster
-together with differet tools and libraries our aap is faster
+-------------------------------------------- x --------------------------------------------
+path to my git repo > https://github.com/krsna-abhi/KrsnaReact_Repo
 
+
+-------------------------------------------- x --------------------------------------------
+- react make our application faster ?
+    - yes react makes our application faster, but react alone doesn't make our appication 
+    faster together with differet tools and libraries our aap is faster
+
+
+-------------------------------------------- x --------------------------------------------
 1. npm ?
     - link > https://www.npmjs.com/
     - npm manage packages
@@ -13,8 +21,8 @@ together with differet tools and libraries our aap is faster
     - why do we need package.json ?
         - imagine you're building a js project, and 
         your applicaiton proper functioning is dependent upon many packages or dependencies
-        - so, instead of remembering all these packages, npm records them inside package.json
-        under key "dependencies"
+        - so, instead of remembering all these packages, npm records them inside 
+        package.json under key "dependencies"
         - let say you need you project to work on a new machine
             - so then you cna simply run command $ npm install
             and npm will install all dependencies automatically.
@@ -40,6 +48,7 @@ how to install a package ?
         updates the package.json file "dependencies" key
 
 
+-------------------------------------------- x --------------------------------------------
 2. what is a bundler ?
     - a bundler is a tool that collects all the files your web application needs, 
     processes them, and combines them into a small number of optimized files that 
@@ -80,8 +89,8 @@ what jobs does a bundler performs for us ?
 
 5. node_modelues folder ?
     - node_modules is collection of dependencies & transitive-dependencies
-    - it contains all the files that npm command $ npm install <package-name> has fetched or 
-    downloaded from npm repository, related to <package-name>
+    - it contains all the files that npm command $ npm install <package-name> has fetched 
+    or downloaded from npm repository, related to <package-name>
     - when you run $ npm install , all the "dependencies" or packages are downloaded and 
     stored within their seperate folders within node_modelues
 
@@ -89,6 +98,7 @@ what jobs does a bundler performs for us ?
     add this line in .gitignore file > node_modules/
 
 
+-------------------------------------------- x --------------------------------------------
 what is npx ?
     - to execute any package, then we use npx
 
@@ -98,6 +108,7 @@ what is npx ?
         - build is stored in dist folder
 
 
+-------------------------------------------- x --------------------------------------------
 - we will never use these cdn links to bring react and react-dom into our project 
 
     <script
@@ -136,12 +147,13 @@ what is npx ?
 - solution : we have to import react and react-dom into our project
     - open App.js file, where you have written your react code, and 
     - import react and react-dom :
-        import React from "react"; // this "react" refer to the react within out node_modelues
+        import React from "react"; // "react" refer to the react within node_modelues
         import ReactDOM from "react-dom/client"; // same for "react-dom"
 
-- now you will see new problem > @parcel/transformer-js: Browser scripts cannot have imports or exports.
+- now you will see new problem > @parcel/transformer-js: Browser scripts cannot have 
+imports or exports.
     - meaning > error means you're using ES module syntax (import/export) in a file 
-    that Parcel is treating as a plain browser js script ( the old-school <script> tag kind ).
+    that Parcel is treating as a plain browser js script.
 - solution :
     - there are two way we can run js on browser
     - first : classic old way > <script src="App.js"></script>
@@ -155,8 +167,7 @@ what is npx ?
 is missing type="module" — so it throws this error because the two are incompatible.
 
 
-
-----
+-------------------------------------------- x --------------------------------------------
 why just .gitignore isn't enough ?
     - Think of Git like a watchlist. Once a file/folder is on the watchlist, 
     Git keeps monitoring it forever — even if you later tell it to ignore that file.
@@ -169,3 +180,16 @@ why just .gitignore isn't enough ?
         - git rm : tells Git to remove something
         - -r : do it recursively ( for folders and all files inside )
         - --cached : remove from Git's tracking only, don't delete the actual folder
+
+
+-------------------------------------------- x --------------------------------------------
+- browserslist >
+    link : https://browserslist.dev/?q=bGFzdCAyIHZlcnNpb25z
+    link : https://browsersl.ist/
+
+    - run command $ npm install browserslist
+
+    - best Browserslist configs for maximum browser coverage :
+    
+
+-------------------------------------------- x --------------------------------------------
