@@ -113,31 +113,98 @@ html way, so no react.createElement()
 
 --------------------------------------- x ---------------------------------------
 react element using jsx >
-- react element should have attributes in camleCase, like className
+    - react element should have attributes in camleCase, like className
 
-< jsx >
-    <div>Hello</div>
-< js >
-    React.createElement('div', // type
-        null, // props (none)
-        'Hello' // child
-    )
+    < jsx >
+        <div>Hello</div>
+    < js >
+        React.createElement('div', // type
+            null, // props (none)
+            'Hello' // child
+        )
 
-< jsx >
-    <button className="btn" onClick={handleClick}>click me</button>
-< js >
-    React.createElement('button',
-        { className: 'btn', onClick: handleClick },
-        'Click me'
-    )
+    < jsx >
+        <button className="btn" onClick={handleClick}>click me</button>
+    < js >
+        React.createElement('button',
+            { className: 'btn', onClick: handleClick },
+            'Click me'
+        )
 
-< JSX >
-    <input type="text" placeholder="Name" />
-< JS >
-    React.createElement('input',
-        { type: 'text', placeholder: 'Name' },
-        // no children — self-closing
-    )
+    < JSX >
+        <input type="text" placeholder="Name" />
+    < JS >
+        React.createElement('input',
+            { type: 'text', placeholder: 'Name' },
+            // no children — self-closing
+        )
 
+
+--------------------------------------- x ---------------------------------------
+react component >
+    - there are 2 types of components > 🔴 class components & 🟡 functional components
+    - component is a function, which returns react element ( written in jsx syntax )
+        - a component which returns react element, is a functional component
+
+    - component name should start with capital letter
+
+
+--------------------------------------- x ---------------------------------------
+- without parentheses : broken
+function App() {
+  return           ← JS inserts ; here
+    <div className="card">
+      <h1>Hello</h1>
+    </div>         // never reached!
+}
+
+- with parentheses : correct
+function App() {
+  return (         // ( on same line
+    <div className="card">
+      <h1>Hello</h1>
+    </div>
+  )               // ) closes it
+}
+
+- explanation >
+    return  // JS sees: line ends, next line starts with <
+            // It thinks you forgot a semicolon. So it adds one:
+    return; // ← function now returns undefined silently
+
+return <div>Hello</div>
+// JSX starts on same line as return
+// ASI doesn't trigger — no problem
+
+const App = () => (
+  <div className="card">
+    <h1>Hello</h1>
+  </div>
+)
+// Arrow => () implicitly returns
+// what's inside the parens
+
+
+--------------------------------------- x ---------------------------------------
+⭐ important :
+    - react element & react functional component are dfferent things >
+        - react element is just a element
+        - where as react functional component is a function, which returns react element
+
+
+--------------------------------------- x ---------------------------------------
+what is component composition ?
+    - simply using one component inside other component
+    - reason : each component does one thing well, 
+    and you put them together, one inside the other - to build complex UIs.
+
+⭐ important :
+    - react element can go inside react component
+    - react element can go inside react element
+    - react component can go inside react element
+    - react component can go inside react component
+
+
+--------------------------------------- x ---------------------------------------
 
 
