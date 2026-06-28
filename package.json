@@ -15,7 +15,9 @@
   "author": "krsna",
   "type": "commonjs",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "dev": "parcel index.html",
+    "build": "parcel build index.html"
   },
   "dependencies": {
     "parcel": "^2.16.4",

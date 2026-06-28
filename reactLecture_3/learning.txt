@@ -1,0 +1,47 @@
+18 jun 2026
+
+--------------------------------------- x ---------------------------------------
+in development phase -
+    - ( in simple ) when you run command $ npx parcel index.html 
+        - parcel creates a development build
+        - parcel starts a local web server on http://localhost:1234, within 
+        machine so you can view your website during development.
+
+    - ( in detail ) what really happens when you run $ npx parcel index.html :
+        - Parcel reads index.html and finds all referenced assets 
+        <script src="...">, images, etc.
+        - Parcel bundles everything : it processes and bundles JS (ES modules), 
+        CSS, TypeScript, JSX, images, and more, without any config file.
+            - Parcel takes your source files and compiles/bundles them into 
+            dist/ folder, the actual built files stays here
+            - devlopment server is dependent on the files within this folder.
+        - starts a devlopment server, by default at http://localhost:1234, 
+        serving your app locally.
+        - enables HMR ( hot module replacement ) : when you edit a file, 
+        the browser updates instantly without a full page reload.
+        - Watches for changes when you save the chnages : Parcel keeps running 
+        and rebuilds automatically on every file save.
+
+    # dist/ folder is created in both development & production phase — 
+    difference is just how optimized the files inside it are.
+
+    - but it is very tedious to write long commands for build in 
+        - development $ npx parcel index.html
+        - production $ npx parcel build index.html
+    - to solve this, we can update our "script" key within package.json file :
+        "scripts": {
+            "test": "jest",
+            "dev": "parcel index.html",
+            "prod": "parcel build index.html"
+        },
+
+    # if you got into knew project, and you don't knwo to how to start the project
+    then open package.json file > look for "script" key
+    and run command $ npm run <the nam eproject has give for dev / production build>
+    - in our case :
+        - development $ npm run dev -or- $ npm dev
+        - production $ npm run prod
+
+
+
+
