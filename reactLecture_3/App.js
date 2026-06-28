@@ -10,9 +10,9 @@ const reactElement = react.createElement(
   { id: "heading" },
   "tera bhai react paad raha hai",
 );
-*/
 
 path.render(reactElement);
+*/
 
 const jscReactElement = (
   <h1 id="heading">tera bhai react-js aur jsx paad raha hai</h1>
