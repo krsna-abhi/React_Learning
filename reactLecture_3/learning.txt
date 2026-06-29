@@ -157,6 +157,7 @@ function App() {
       <h1>Hello</h1>
     </div>         // never reached!
 }
+    - Babel isn't able to identify jsx boundaries
 
 - with parentheses : correct
 function App() {
@@ -206,5 +207,11 @@ what is component composition ?
 
 
 --------------------------------------- x ---------------------------------------
+read about how react protects are application from crosside scripting
 
 
+--------------------------------------- x ---------------------------------------
+multiple ways to render funcitonal component :
+    - <MyComponent />
+    - <MyComponent> <MyComponent />
+    - {MyComponent()}
