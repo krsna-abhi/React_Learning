@@ -1,0 +1,13 @@
+30 jun 2026
+
+
+to clear cache and dist, run command $ rm -rf .parcel-cache dist
+------------------------------------------ x ------------------------------------------
+colour >
+    #ffebd4 : main colour
+    #664318 : border colour | text colour-1 for h1
+    #000b47 : text colour-2 for paragraphs
+    #991749 : text colour-2 for important texts
+
+
+

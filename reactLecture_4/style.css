@@ -1,0 +1,104 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --main-bg: #ffebd4;
+  --border-color: #664318; /* use with border: 2px solid var(--border-color); */
+  --text-color-1: #664318;
+  --text-color-2: #000b47;
+  --text-color-3: #991749;
+  --text-color-4: #349beb;
+  --spacing: 0.5rem; /* was 8px — moved here from .header for global reuse */
+  --nav-padding-y: 2.5rem; /* was 40px in .navBox */
+}
+
+.backgroungColor {
+  background-color: var(--main-bg);
+}
+
+.textcolor_1 {
+  color: var(--text-color-1);
+}
+.textcolor_2 {
+  color: var(--text-color-2);
+}
+.textcolor_3 {
+  color: var(--text-color-3);
+}
+
+/* header styling */
+.header {
+  user-select: none;
+  position: sticky;
+  top: 0;
+  width: 6%;
+  height: 98vh;
+  max-height: 100vh;
+  background-color: var(--main-bg);
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing);
+  gap: var(--spacing);
+}
+
+/* logo styling */
+.roundImageBox {
+  box-sizing: border-box;
+  user-select: none;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.roundImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* navbar box */
+.navBox {
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--text-color-1);
+  border-radius: 9999px;
+  display: flex;
+  flex-direction: column;
+  padding: var(--nav-padding-y) var(--spacing);
+  gap: var(--spacing);
+}
+
+.boxItem {
+  all: unset; /* removes default button styles */
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    box-shadow 0.2s; /* added box-shadow */
+
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border: 1px solid var(--text-color-1);
+  border-radius: 5px 20px 5px 20px;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.boxItem:hover {
+  background-color: var(--text-color-2);
+  color: var(--main-bg);
+}
+.boxItem:active {
+  box-shadow: 0 0 15px 5px var(--text-color-4); /* glow */
+  background-color: var(--text-color-2);
+  color: var(--text-color-4);
+}
