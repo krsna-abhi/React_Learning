@@ -22,3 +22,9 @@ index as a key is an anti-pattern | never use index as a key
 knowledge about reduse, map, filter
 
 
+------------------------------------------ x ------------------------------------------
+optional chaining ? the '?' symbol
+
+
+------------------------------------------ x ------------------------------------------
+functional argument ?
